@@ -1,8 +1,25 @@
-import type { NextConfig } from "next";
+import bundleAnalyzer from '@next/bundle-analyzer';
+import type { NextConfig } from 'next';
+
+import i18nConfig from './i18next.config';
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  reactStrictMode: true,
+
+  //todo: change after DS being added
+  // transpilePackages: [''],
+  output: 'standalone',
+  compiler: {
+    reactRemoveProperties: true,
+  },
+  i18n: {
+    locales: i18nConfig.locales,
+    defaultLocale: i18nConfig.defaultLocale,
+  },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);
