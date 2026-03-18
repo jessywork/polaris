@@ -1,25 +1,22 @@
 import bundleAnalyzer from '@next/bundle-analyzer';
 import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-import i18nConfig from './i18next.config';
-
+const withNextIntl = createNextIntlPlugin();
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-
-  //todo: change after DS being added
-  // transpilePackages: [''],
+  transpilePackages: [
+    '@metyis-porto/douro-ui-react',
+    '@metyis-porto/douro-ui-button',
+  ],
   output: 'standalone',
   compiler: {
     reactRemoveProperties: true,
   },
-  i18n: {
-    locales: i18nConfig.locales,
-    defaultLocale: i18nConfig.defaultLocale,
-  },
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default withBundleAnalyzer(withNextIntl(nextConfig));
