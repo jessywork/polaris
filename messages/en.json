@@ -1,0 +1,9 @@
+{
+  "Homepage": {
+    "title": "Welcome to Polaris",
+    "description": "This is a simple Next.js App Router boilerplate created by the Front-End team in Portugal.",
+    "employeeTitle": "🏆 Employee of the Year",
+    "employeeDescription": "Congrats… somehow, you managed to survive another year here and actually get this award. Clearly, your ability to look busy while achieving questionable results has truly impressed us all. Well played, champ.",
+    "githubButton": "Check Github"
+  }
+}

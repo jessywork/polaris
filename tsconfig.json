@@ -19,6 +19,14 @@
       }
     ],
     "paths": {
+      "@components/*": ["./src/components/*"],
+      "@i18n/*": ["./src/i18n/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@messages/*": ["./messages/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@tests/*": ["./tests/*"],
+      "@typing/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"],
       "@/*": ["./src/*"]
     }
   },
